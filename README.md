@@ -1,12 +1,10 @@
 ## 👋 Sobre mí
 
-Backend developer especializado en **modernización de sistemas legacy** y **arquitecturas de integración**.
+Backend developer con experiencia en **integración de datos industriales** (Repsol/Accenture) y **modernización de sistemas legacy** (migración COBOL → Java).
 
-Mi enfoque principal es la migración de mainframe (COBOL) a Java moderno con Spring Batch, asegurando la **integridad y trazabilidad del dato** en cada etapa del proceso. No solo traslado lógica: la rediseño para que sea mantenible, testeable y escalable.
+Mi enfoque transversal es garantizar la **integridad y trazabilidad del dato**, ya sea en flujos críticos de IoT, en migraciones de mainframe o en APIs event-driven.
 
-Fuera del mundo mainframe, construyo **sistemas de integración** con FastAPI y arquitecturas **event-driven (EDA)** usando RabbitMQ. Me interesa que los sistemas hablen entre sí de forma fiable, asíncrona y con bajo acoplamiento.
-
-> 📄 Más sobre mi experiencia profesional en [LinkedIn](https://www.linkedin.com/in/estibaliz-etxaburu-lekube-5011b75b/)
+Tengo experiencia real en entornos cloud (Azure, Kubernetes, Grafana) y también construyo sistemas desde cero con arquitectura hexagonal y EDA.
 
 ## ⚙️ Stack principal
 
@@ -28,16 +26,30 @@ Fuera del mundo mainframe, construyo **sistemas de integración** con FastAPI y 
 | **[COBOL-Fixed-Width-Parser-API](https://github.com/eetxlek/COBOL-Fixed-Width-Parser-API)** | FastAPI, Pydantic | Puente bidireccional COBOL ↔ JSON |
 | **[microservices-failure-patterns](https://github.com/eetxlek/microservices-failure-patterns)** | Python | Laboratorio de fallos en sistemas distribuidos |
 
-## 🔍 Proyecto estrella: Migración COBOL → Spring Batch
+## 🔍 En detalle
+
+### 🚀 Migración Mainframe → Spring Batch
+*Repositorio:* [mainframe-migration-spring-batch-cobol](https://github.com/eetxlek/mainframe-migration-spring-batch-cobol)
 
 **El problema:** Migrar un proceso batch crítico (PB0EC319) de mainframe a Java.
 
-**Mi solución:**
-- Migración a Java 17 con Spring Batch manteniendo lógica 1:1
-- Optimización: lookup O(1) con HashMap vs lectura secuencial
-- Chunk-oriented processing con restart automático
+**Mi solución:** Migración a Java 17 con Spring Batch manteniendo lógica 1:1, lookup O(1) con HashMap, chunk-oriented processing con restart automático.
 
 **Resultado:** Misma lógica, 10x más rápido, testeable, mantenible.
+
+### 🔄 COBOL Fixed-Width Parser API
+*Repositorio:* [COBOL-Fixed-Width-Parser-API](https://github.com/eetxlek/COBOL-Fixed-Width-Parser-API)
+
+**El problema:** Los sistemas modernos necesitan consumir datos de mainframe, pero los archivos COBOL usan formatos de longitud fija y tipos específicos (DISPLAY, COMP, COMP-3).
+
+**Mi solución:** API REST con FastAPI y Pydantic que parsea archivos fixed-width a JSON y viceversa, con soporte para COMP/COMP-3 y validaciones automáticas.
+
+### 📡 Industrial Telemetry API
+*Repositorio:* [industrial-telemetry-api](https://github.com/eetxlek/industrial-telemetry-api)
+
+**El problema:** En plantas industriales, los datos de sensores pueden ser manipulados, llevando a decisiones peligrosas.
+
+**Mi solución:** API con hash chain (SHA-256) que encadena cada lectura con la anterior, arquitectura hexagonal, event-driven con RabbitMQ y endpoint de auditoría.
 
 ## 💡 Lo que me mueve
 
@@ -48,3 +60,5 @@ Fuera del mundo mainframe, construyo **sistemas de integración** con FastAPI y 
 ## 📫 ¿Conectamos?
 
 Si buscas a alguien que entienda de **migración legacy → moderno** o **integraciones robustas con trazabilidad**, hablemos.
+
+[LinkedIn](https://www.linkedin.com/in/estibaliz-etxaburu-lekube-5011b75b/)

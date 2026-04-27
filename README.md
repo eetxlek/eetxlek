@@ -24,7 +24,7 @@ Tengo experiencia real en entornos cloud (Azure, Kubernetes, Grafana) y también
 | **[mainframe-migration-spring-batch-cobol](https://github.com/eetxlek/mainframe-migration-spring-batch-cobol)** | Spring Batch, Java 17, COBOL | Migración 1:1 de proceso legacy → moderno |
 | **[industrial-telemetry-api](https://github.com/eetxlek/industrial-telemetry-api)** | FastAPI, RabbitMQ, PostgreSQL, SHA-256 | EDA + hash chain para integridad criptográfica |
 | **[COBOL-Fixed-Width-Parser-API](https://github.com/eetxlek/COBOL-Fixed-Width-Parser-API)** | FastAPI, Pydantic | Puente bidireccional COBOL ↔ JSON |
-| **[microservices-failure-patterns](https://github.com/eetxlek/microservices-failure-patterns)** | Python | Laboratorio de fallos en sistemas distribuidos |
+| **[async-order-processing](https://github.com/eetxlek/async-order-processing)** | FastAPI, RabbitMQ, Docker, pytest | Resiliencia asíncrona + dead letter + backoff exponencial + throttling |
 
 ## 🔍 En detalle
 

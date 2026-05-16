@@ -1,29 +1,22 @@
-## 👋 Sobre mí
+## 👋 Estibaliz Etxaburu — Data Engineer
 
-Data Engineer especializada en **pipelines ETL/ELT**, **modernización de sistemas 
-legacy** y **calidad del dato** en entornos industriales.
+Especializada en pipelines **ETL/ELT**, **modernización legacy** y **calidad del dato**.  
+Experiencia real en Accenture/Repsol con Azure, Python y FastAPI en entornos industriales.  
+Construyo sistemas donde la **trazabilidad** y la **integridad del dato** no son opcionales.
 
-Experiencia real en Accenture/Repsol trabajando con Azure, Python y FastAPI en 
-pipelines de ingesta de datos industriales. Construyo proyectos orientados a 
-trazabilidad, data quality y arquitecturas lakehouse modernas.
-
-Mi enfoque: llevar datos desde sistemas legacy (COBOL/mainframe) hasta plataformas 
-cloud modernas, garantizando integridad y observabilidad en cada paso.
+📍 Alicante · [LinkedIn](https://www.linkedin.com/in/estibaliz-etxaburu-lekube-5011b75b/)
 
 ---
 
-## ⚙️ Stack principal
+## ⚙️ Stack
 
 | Área | Tecnologías |
 | :--- | :--- |
 | **Data Engineering** | PySpark, ETL/ELT, Parquet, JSONL, Batch Processing |
 | **Validación & Calidad** | Pydantic, Schema Enforcement, Data Quality, Hash Chains |
-| **APIs & Backend** | FastAPI, Python, Spring Batch, Java 17 |
 | **Cloud & DevOps** | Azure (Key Vault, Log Analytics, DevOps), Docker, CI/CD |
-| **Legacy & Mainframe** | COBOL, JCL, Copybooks, Fixed-Width, Mainframe Integration |
-| **Observabilidad** | Grafana, Azure Log Analytics, métricas, alertas |
-| **Mensajería** | Kafka, RabbitMQ |
-| **Persistencia** | PostgreSQL, MySQL, Redis |
+| **Legacy & Mainframe** | COBOL, JCL, Copybooks, Fixed-Width, Spring Batch |
+| **Observabilidad** | Grafana, Azure Log Analytics, RabbitMQ, Kafka |
 
 ---
 
@@ -43,6 +36,17 @@ cloud modernas, garantizando integridad y observabilidad en cada paso.
 ### 🏗️ End-to-End Data Pipeline: Legacy → Data Lake
 *Repositorio:* [data-engineer-portfolio](https://github.com/eetxlek/data-engineer-portfolio)
 
+```
+┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐
+│   Legacy System  │───▶│    Validator     │────▶│      Spark       │───▶│    Data Lake     │
+│   (Simulador)    │     │   (Pydantic)     │     │    (PySpark)     │     │    (Parquet)     │
+└──────────────────┘     └──────────────────┘     └──────────────────┘     └──────────────────┘
+         │                        │                        │                        │
+         ▼                        ▼                        ▼                        ▼
+ raw_siniestros.jsonl    válidos/inválidos         Transformaciones         Particionado por
+                         (separación datos)        (enriquecimiento)        tipo_seguro / año
+```
+
 **El problema:** Demostrar un pipeline ETL/ELT completo desde sistemas legacy 
 hasta un Data Lake moderno, con validación, calidad del dato y almacenamiento 
 optimizado para analítica.
@@ -51,45 +55,17 @@ optimizado para analítica.
 validación de reglas de negocio con Pydantic, procesamiento distribuido con PySpark, 
 almacenamiento en Parquet particionado por dominio y simulación de cloud con MinIO.
 
-**Resultado:** Arquitectura reproducible con Docker Compose, separación automática 
-de registros válidos/inválidos y data quality garantizada en cada fase del pipeline.
+**Resultado:** 95 de 100 registros procesados correctamente, separación automática 
+válidos/inválidos, trazabilidad completa por fase y entorno Data Platform 
+reproducible en local con Docker Compose.
 
 ---
 
-### 🚀 Migración Mainframe → Spring Batch
-*Repositorio:* [mainframe-migration-spring-batch-cobol](https://github.com/eetxlek/mainframe-migration-spring-batch-cobol)
+**[Migración Mainframe → Spring Batch](https://github.com/eetxlek/mainframe-migration-spring-batch-cobol)** — Migración de proceso batch crítico COBOL a Java 17 con Spring Batch manteniendo lógica 1:1. Resultado: 10x más rápido, testeable y mantenible.
 
-**El problema:** Migrar un proceso batch crítico de mainframe a una arquitectura 
-moderna preservando lógica e integridad del procesamiento.
+**[COBOL Fixed-Width Parser API](https://github.com/eetxlek/COBOL-Fixed-Width-Parser-API)** — API REST que parsea archivos fixed-width COBOL (DISPLAY, COMP, COMP-3) a JSON y viceversa para interoperabilidad en pipelines ETL.
 
-**Mi solución:** Migración a Java 17 con Spring Batch manteniendo lógica 1:1, 
-lookup O(1) con HashMap y chunk-oriented processing con restart automático.
-
-**Resultado:** Misma lógica, 10x más rápido, testeable y mantenible.
-
----
-
-### 🔄 COBOL Fixed-Width Parser API
-*Repositorio:* [COBOL-Fixed-Width-Parser-API](https://github.com/eetxlek/COBOL-Fixed-Width-Parser-API)
-
-**El problema:** Los pipelines ETL modernos necesitan consumir datos de mainframe 
-en formatos COBOL de longitud fija (DISPLAY, COMP, COMP-3).
-
-**Mi solución:** API REST con FastAPI y Pydantic que parsea fixed-width a JSON 
-y viceversa, con validaciones automáticas para interoperabilidad en pipelines ETL.
-
----
-
-### 📡 Data Integrity & Validation Pipeline
-*Repositorio:* [industrial-telemetry-api](https://github.com/eetxlek/industrial-telemetry-api)
-
-**El problema:** Garantizar que los datos de sensores industriales no sean 
-manipulados antes de llegar al sistema analítico.
-
-**Mi solución:** Pipeline con hash chain (SHA-256) que encadena cada registro 
-con el anterior, arquitectura hexagonal y endpoint de auditoría para trazabilidad 
-completa.
-
+**[Data Integrity & Validation Pipeline](https://github.com/eetxlek/industrial-telemetry-api)** — Pipeline con hash chain SHA-256 que garantiza integridad criptográfica de telemetría industrial con endpoint de auditoría completo.
 ---
 
 ## 💡 Lo que me mueve

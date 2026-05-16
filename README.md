@@ -66,6 +66,7 @@ reproducible en local con Docker Compose.
 **[COBOL Fixed-Width Parser API](https://github.com/eetxlek/COBOL-Fixed-Width-Parser-API)** — API REST que parsea archivos fixed-width COBOL (DISPLAY, COMP, COMP-3) a JSON y viceversa para interoperabilidad en pipelines ETL.
 
 **[Data Integrity & Validation Pipeline](https://github.com/eetxlek/industrial-telemetry-api)** — Pipeline con hash chain SHA-256 que garantiza integridad criptográfica de telemetría industrial con endpoint de auditoría completo.
+
 ---
 
 ## 💡 Lo que me mueve

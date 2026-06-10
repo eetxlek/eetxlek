@@ -24,7 +24,7 @@ Construyo sistemas donde la **trazabilidad** y la **integridad del dato** no son
 
 | Proyecto | Stack | Qué demuestra |
 | :--- | :--- | :--- |
-| **[data-engineer-portfolio](https://github.com/eetxlek/data-engineer-portfolio)** | PySpark, Pydantic, Docker, MinIO, Parquet | Pipeline ETL/ELT end-to-end Legacy → Data Lake |
+| **[data-engineer-portfolio](https://github.com/eetxlek/data-engineer-portfolio)** | PySpark, Pydantic, Docker, MinIO, Parquet, Delta Lake, dbt | Pipeline ETL/ELT end-to-end Legacy → Data Lake |
 | **[mainframe-migration-spring-batch-cobol](https://github.com/eetxlek/mainframe-migration-spring-batch-cobol)** | Spring Batch, Java 17, COBOL | Migración batch legacy → arquitectura moderna |
 | **[COBOL-Fixed-Width-Parser-API](https://github.com/eetxlek/COBOL-Fixed-Width-Parser-API)** | FastAPI, Pydantic | Interoperabilidad COBOL ↔ JSON para pipelines ETL |
 | **[industrial-telemetry-api](https://github.com/eetxlek/industrial-telemetry-api)** | FastAPI, RabbitMQ, PostgreSQL, SHA-256 | Data integrity + trazabilidad criptográfica |
@@ -37,27 +37,30 @@ Construyo sistemas donde la **trazabilidad** y la **integridad del dato** no son
 *Repositorio:* [data-engineer-portfolio](https://github.com/eetxlek/data-engineer-portfolio)
 
 ```
-┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐
-│   Legacy System  │───▶│    Validator     │────▶│      Spark       │───▶│    Data Lake     │
-│   (Simulador)    │     │   (Pydantic)     │     │    (PySpark)     │     │    (Parquet)     │
-└──────────────────┘     └──────────────────┘     └──────────────────┘     └──────────────────┘
-         │                        │                        │                        │
-         ▼                        ▼                        ▼                        ▼
- raw_siniestros.jsonl    válidos/inválidos         Transformaciones         Particionado por
-                         (separación datos)        (enriquecimiento)        tipo_seguro / año
+┌────────────┐    ┌───────────────┐    ┌────────────┐    ┌─────────────┐   ┌──────────────┐    ┌────────────┐
+│   Legacy   ───▶    Validator    ───▶   PySpark   ───▶   Delta lake   ──▶  dbt(DuckDB) ───▶  Streamlit  │
+│   System   │    │  (Pydantic)   │    │  ingesta   │    │ (Bronze)    │   |  Silver/Gold |    │ Dashboard  │
+└────────────┘    └───────────────┘    └────────────┘    └─────────────┘   └──────────────┘    └────────────┘
+         │                │                  │                 │                │                   │
+         ▼                ▼                  ▼                 ▼                ▼                   ▼
+ raw_siniestros   válidos/inválidos   Transformaciones   Lakehouse fisico   Modelo analitico     KPIs negocio
+                  (separa datos)       + particionado     (ACID + logs)     + analytics.duckdb 
+                  data quality        tipo seguro /año                       (serving layer)
 ```
 
 **El problema:** Demostrar un pipeline ETL/ELT completo desde sistemas legacy 
-hasta un Data Lake moderno, con validación, calidad del dato y almacenamiento 
-optimizado para analítica.
+hasta un Data Lakehouse moderno, con validación, calidad del dato y almacenamiento 
+optimizado para analítica, listo para ser consumido como data product.
 
 **Mi solución:** Pipeline end-to-end con generación de datos sintéticos legacy, 
 validación de reglas de negocio con Pydantic, procesamiento distribuido con PySpark, 
-almacenamiento en Parquet particionado por dominio y simulación de cloud con MinIO.
+almacenamiento transaccional en Delta Lake particionado por dominio, modelado analítico 
+con dbt (capas Silver/Gold sobre DuckDB) y simulación de cloud con MinIO.
 
-**Resultado:** 95 de 100 registros procesados correctamente, separación automática 
-válidos/inválidos, trazabilidad completa por fase y entorno Data Platform 
-reproducible en local con Docker Compose.
+**Resultado:** Plataforma de datos completa y reproducible con Docker Compose — 
+validación automática con trazabilidad por fase, pipeline con cobertura de tests 
+en tres niveles (unit, integration, quality) y dashboard interactivo de KPIs 
+de negocio consumiendo la capa Gold.
 
 ---
 

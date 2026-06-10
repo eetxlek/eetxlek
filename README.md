@@ -12,8 +12,10 @@ Construyo sistemas donde la **trazabilidad** y la **integridad del dato** no son
 
 | Área | Tecnologías |
 | :--- | :--- |
-| **Data Engineering** | PySpark, ETL/ELT, Parquet, JSONL, Batch Processing |
-| **Validación & Calidad** | Pydantic, Schema Enforcement, Data Quality, Hash Chains |
+| **Data Engineering** | PySpark, ETL/ELT, Parquet, Delta Lake, JSONL, Batch Processing |
+| **Data Modeling** | dbt, SQL, Semantic Layer, Silver/Gold architecture |
+| **Analytics y serving** | DuckDB, Analytical Queries, Data Product |
+| **Validación & Calidad** | Pydantic, Schema Enforcement, Data Quality, dbt tests, Audit Log, Hash Chains |
 | **Cloud & DevOps** | Azure (Key Vault, Log Analytics, DevOps), Docker, CI/CD |
 | **Legacy & Mainframe** | COBOL, JCL, Copybooks, Fixed-Width, Spring Batch |
 | **Observabilidad** | Grafana, Azure Log Analytics, RabbitMQ, Kafka |

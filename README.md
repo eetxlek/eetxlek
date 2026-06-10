@@ -1,8 +1,8 @@
 ## 👋 Estibaliz Etxaburu — Data Engineer
 
-Especializada en pipelines **ETL/ELT**, **modernización legacy** y **calidad del dato**.  
-Experiencia real en Accenture/Repsol con Azure, Python y FastAPI en entornos industriales.  
-Construyo sistemas donde la **trazabilidad** y la **integridad del dato** no son opcionales.
+Especializada en pipelines ETL/ELT, modernización legacy y calidad del dato. 
+Experiencia en Accenture/Repsol con Azure, Python y FastAPI en entornos industriales. 
+Construyo sistemas donde la trazabilidad y la integridad del dato no son opcionales.
 
 📍 Alicante · [LinkedIn](https://www.linkedin.com/in/estibaliz-etxaburu-lekube-5011b75b/)
 

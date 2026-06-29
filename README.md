@@ -12,6 +12,7 @@ Construyo sistemas donde la trazabilidad y la integridad del dato no son opciona
 
 | Área | Tecnologías |
 | :--- | :--- |
+| **Orquestación y Linaje** | Dagster (Asset-based orchestration) |
 | **Data Engineering** | PySpark, ETL/ELT, Parquet, Delta Lake, JSONL, Batch Processing |
 | **Data Modeling** | dbt, SQL, Semantic Layer, Silver/Gold architecture |
 | **Analytics y serving** | DuckDB, Analytical Queries, Data Product |
@@ -26,7 +27,7 @@ Construyo sistemas donde la trazabilidad y la integridad del dato no son opciona
 
 | Proyecto | Stack | Qué demuestra |
 | :--- | :--- | :--- |
-| **[data-engineer-portfolio](https://github.com/eetxlek/data-engineer-portfolio)** | PySpark, Pydantic, Docker, MinIO, Parquet, Delta Lake, dbt | Pipeline ETL/ELT end-to-end Legacy → Data Lake |
+| **[data-engineer-portfolio](https://github.com/eetxlek/data-engineer-portfolio)** | Dagster, PySpark, Pydantic, Docker, MinIO, Parquet, Delta Lake, dbt | Plataforma de datos E2E (Legacy a Lakehouse) con orquestación declarativa, validación rigurosa y entrega de valor mediante un Data Product. |
 | **[mainframe-migration-spring-batch-cobol](https://github.com/eetxlek/mainframe-migration-spring-batch-cobol)** | Spring Batch, Java 17, COBOL | Migración batch legacy → arquitectura moderna |
 | **[COBOL-Fixed-Width-Parser-API](https://github.com/eetxlek/COBOL-Fixed-Width-Parser-API)** | FastAPI, Pydantic | Interoperabilidad COBOL ↔ JSON para pipelines ETL |
 | **[industrial-telemetry-api](https://github.com/eetxlek/industrial-telemetry-api)** | FastAPI, RabbitMQ, PostgreSQL, SHA-256 | Data integrity + trazabilidad criptográfica |
